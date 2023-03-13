@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 function ImagePart(props) {
     const [finalPresentation, setFinalPresentation] = React.useState("");
@@ -8,9 +9,12 @@ function ImagePart(props) {
 
     const showPresentation = () => {
         if (presentationCreated) {
-            return presentationIsVisible
-                ? setPresentationIsVisible(false)
-                : setPresentationIsVisible(true);
+            if (presentationIsVisible) {
+                setPresentationIsVisible(false);
+            } else {
+                setPresentationIsVisible(true);
+            }
+            return;
         }
 
         const texts = props.textsForMen
@@ -47,7 +51,6 @@ function ImagePart(props) {
                         <br />
                     </div>
                 )}
-                {/* {presentacionFinal} */}
             </figcaption>
         </figure>
     );

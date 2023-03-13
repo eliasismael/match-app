@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 function FindCoupleButton(props) {
     const [buttonClicked, setButtonClicked] = React.useState(false);
@@ -22,6 +23,7 @@ function FindCoupleButton(props) {
         props.setResultText("Buscando matches...");
 
         let couples = false;
+
         setTimeout(() => {
             let matchesString = "";
 

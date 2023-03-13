@@ -1,0 +1,23 @@
+.ImagePart__figure {
+    text-align: center;
+    margin: 10px;
+}
+
+.ImagePart__figure__img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ImagePart__figure__img:hover {
+    box-shadow: 0 0 10px #ff3b3f;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.ImagePart__figure__figcaption {
+    font-size: 1.6rem;
+    /* font-weight: ; */
+    margin-top: 5px;
+}

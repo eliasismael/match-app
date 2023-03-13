@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 function ButtonChooseCouple(props) {
     const [buttonClicked, setButtonClicked] = React.useState(false);

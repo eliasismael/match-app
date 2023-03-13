@@ -12,8 +12,6 @@
     src: url("../public/fonts/MoonDance-Regular.ttf") format("truetype");
 }
 
-/* Estilos generales */
-
 header {
     background-image: linear-gradient(45deg, #ff3b3f, #e60073);
     color: #ffffff;
@@ -35,95 +33,6 @@ main {
 
 section {
     margin-top: 40px;
-}
-
-.ImagesSection {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.ImagePart__figure {
-    text-align: center;
-    margin: 10px;
-}
-
-.ImagePart__figure__img {
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.ImagePart__figure__img:hover {
-    box-shadow: 0 0 10px #ff3b3f;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.ImagePart__figure__figcaption {
-    font-size: 1.6rem;
-    /* font-weight: ; */
-    margin-top: 5px;
-}
-
-.ButtonChooseCouple {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.ButtonChooseCouple__button {
-    background: linear-gradient(45deg, #ff3b3f, #e60073);
-    color: #ffffff;
-    font-size: 1.2rem;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.ButtonChooseCouple__button:hover {
-    cursor: pointer;
-    /* box-shadow: 0 0 5px #ff3b3f; */
-    transform: scale(1.1, 1.1);
-}
-
-/* Estilos para el botón de búsqueda */
-.FindCouplesButton__button {
-    background-image: linear-gradient(45deg, #ff3b3f, #e60073);
-    color: #ffffff;
-    font-size: 1.2rem;
-    margin: 3rem;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.FindCouplesButton__button:hover {
-    cursor: pointer;
-    transform: scale(1.1, 1.1);
-}
-
-.buttonCliked {
-    border: 3px solid yellow;
-    font-size: 1rem;
-    pointer-events: none;
-}
-
-/* Estilos para la sección de resultados */
-.Results {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.Results-matches {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.Result-msg {
-    font-size: 2.2rem;
 }
 
 /* Estilos para el pie de página */

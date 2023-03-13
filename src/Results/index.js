@@ -1,3 +1,5 @@
+import "./index.css";
+
 function Results(props) {
     return (
         <section className="Results">

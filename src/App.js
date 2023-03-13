@@ -68,17 +68,14 @@ function App() {
                 />
 
                 <FindCoupleButton
-                    men={men} //
-                    // women={women}
-                    menHaveChosen={menHaveChosen} //
-                    womenHaveChosen={womenHaveChosen} //
-                    // resultText={resultText}
-                    setResultText={setResultText} //
-                    // matchesText={matchesText}
-                    setMatchesText={setMatchesText} //
-                    coupleSelected={coupleSelected} //
-                    matchesSearched={matchesSearched} //
-                    setMatchesSearched={setMatchesSearched} //
+                    men={men}
+                    menHaveChosen={menHaveChosen}
+                    womenHaveChosen={womenHaveChosen}
+                    setResultText={setResultText}
+                    setMatchesText={setMatchesText}
+                    coupleSelected={coupleSelected}
+                    matchesSearched={matchesSearched}
+                    setMatchesSearched={setMatchesSearched}
                 />
                 <Results resultText={resultText} matchesText={matchesText} />
             </main>

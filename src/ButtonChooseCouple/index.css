@@ -1,0 +1,24 @@
+.ButtonChooseCouple {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ButtonChooseCouple__button {
+    background: linear-gradient(45deg, #ff3b3f, #e60073);
+    color: #ffffff;
+    font-size: 1.2rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.ButtonChooseCouple__button:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+
+.buttonCliked {
+    border: 0.2rem solid yellow;
+    font-size: 1rem;
+    pointer-events: none;
+}
