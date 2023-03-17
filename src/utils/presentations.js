@@ -37,16 +37,15 @@ const textsForMen = {
     ],
 
     WhatHeIsLookingFor: [
-        "Me gustaría saber que puedo confiar en alguien y que nos vamos a apoyar en los buenos y malos momentos. ", //"Lealtad:
-        "Me gustaría sentir que alguien me entiende y se preocupa por mí. ", // "Empatía:
-        "Me gustaría saber que puedo contar con alguien que cumple con sus compromisos. ", //  "Responsabilidad:
-        "Me gustaría estar con alguien que pueda mantener la calma y manejar situaciones con serenidad. ", //  "Paciencia
-        "Me gustaría saber que puedo confiar en lo que alguien me dice y que no me oculta nada. ", //"Honestidad
-        "Me gustaría estar con alguien que tenga ideas nuevas y originales y que pueda aportar soluciones diferentes a los problemas. ", //  "Creatividad:
-        "Me gustaría estar con alguien que pueda adaptarse a diferentes situaciones y cambios inesperados. ", //  "Flexibilidad
-        "Me gustaría estar con alguien que no se jacta de sus logros y que trata a todos con igualdad y respeto. ", // "Humildad:
-        "Me gustaría estar con alguien que se preocupa por los demás y está dispuesto a ayudar cuando se necesita. ", // "Generosidad:
-        "Me gustaría estar con alguien que puede manejar sus propias emociones y las de los demás de manera saludable y efectiva. ", //  "Inteligencia emocional:
+        "Me gustaría saber que puedo confiar en alguien y que nos vamos a apoyar en los buenos y malos momentos. ",
+        "Me gustaría saber que puedo contar con alguien que cumple con sus compromisos. ",
+        "Me gustaría estar con alguien que pueda mantener la calma y manejar situaciones con serenidad. ",
+        "Me gustaría saber que puedo confiar en lo que alguien me dice y que no me oculta nada. ",
+        "Me gustaría estar con alguien que tenga ideas nuevas y originales y que pueda aportar soluciones diferentes a los problemas. ",
+        "Me gustaría estar con alguien que pueda adaptarse a diferentes situaciones y cambios inesperados. ",
+        "Me gustaría estar con alguien que no se jacta de sus logros y que trata a todos con igualdad y respeto. ",
+        "Me gustaría estar con alguien que se preocupa por los demás y está dispuesto a ayudar cuando se necesita. ",
+        "Me gustaría estar con alguien que puede manejar sus propias emociones y las de los demás de manera saludable y efectiva. ",
     ],
 
     reasonToChooseHim: [
@@ -89,28 +88,28 @@ const textsForWomen = {
         "Soy actriz y directora de teatro que trabaja en una compañía independiente. ",
     ],
     preferences: [
-        "Me encanta cocinar y experimentar con diferentes recetas en mi tiempo libre",
-        "Disfruto leyendo novelas de romance y drama",
-        "Me gusta hacer yoga y meditación para cuidar mi salud mental",
-        "Me encanta la música pop y asistir a conciertos en vivo",
-        "Disfruto de una buena taza de té o café mientras leo un libro o veo una película",
-        "Me gusta viajar y conocer nuevas culturas y lugares",
-        "Me encanta hacer senderismo y estar en contacto con la naturaleza",
-        "Disfruto de una buena comida en compañía de amigos",
-        "Me gusta asistir a obras de teatro y espectáculos musicales",
-        "Me encanta bailar y asisto a clases de baile regularmente",
+        "Me encanta cocinar y experimentar con diferentes recetas en mi tiempo libre. ",
+        "Disfruto leyendo novelas de romance y drama. ",
+        "Me gusta hacer yoga y meditación para cuidar mi salud mental. ",
+        "Me encanta la música pop y asistir a conciertos en vivo. ",
+        "Disfruto de una buena taza de té o café mientras leo un libro o veo una película. ",
+        "Me gusta viajar y conocer nuevas culturas y lugares. ",
+        "Me encanta hacer senderismo y estar en contacto con la naturaleza. ",
+        "Disfruto de una buena comida en compañía de amigos. ",
+        "Me gusta asistir a obras de teatro y espectáculos musicales. ",
+        "Me encanta bailar y asisto a clases de baile regularmente. ",
     ],
     WhatSheIsLookingFor: [
-        "Me gustaría estar con alguien que pueda expresarse claramente y escuchar con atención lo que tengo que decir", //"Comunicación:
-        "Me gustaría estar con alguien que tenga objetivos claros y trabaje duro para alcanzarlos", //"Ambición:
-        "Me gustaría estar con alguien que pueda sorprenderme y llevarme a vivir aventuras inesperadas", // "Espontaneidad:
-        "Me gustaría estar con alguien que pueda esperar y no se rinda fácilmente ante los obstáculos", //"Paciencia:
-        "Me gustaría estar con alguien que tenga sus propias metas y actividades, además de compartir tiempo conmigo", // "Independencia:
-        "Me gustaría estar con alguien que tenga una actitud proactiva y tenga iniciativa para crear oportunidades", // "Emprendimiento:
-        "Me gustaría estar con alguien que pueda hacerme reír y disfrutar de los momentos divertidos de la vida", // "Sentido del humor:
-        "Me gustaría estar con alguien que pueda expresar su cariño y afecto de diferentes maneras", // "Afectuosidad:
-        "Me gustaría estar con alguien que tenga principios sólidos y se comporte de manera congruente con ellos", // "Integridad:
-        "Me gustaría estar con alguien que tenga interés por aprender y descubrir cosas nuevas", //  "Curiosidad:
+        "Me gustaría estar con alguien que pueda expresarse claramente y escuchar con atención lo que tengo que decir. ",
+        "Me gustaría estar con alguien que tenga objetivos claros y trabaje duro para alcanzarlos. ",
+        "Me gustaría estar con alguien que pueda sorprenderme y llevarme a vivir aventuras inesperadas. ",
+        "Me gustaría estar con alguien que pueda esperar y no se rinda fácilmente ante los obstáculos. ",
+        "Me gustaría estar con alguien que tenga sus propias metas y actividades, además de compartir tiempo conmigo. ",
+        "Me gustaría estar con alguien que tenga una actitud proactiva y tenga iniciativa para crear oportunidades. ",
+        "Me gustaría estar con alguien que pueda hacerme reír y disfrutar de los momentos divertidos de la vida. ",
+        "Me gustaría estar con alguien que pueda expresar su cariño y afecto de diferentes maneras. ",
+        "Me gustaría estar con alguien que tenga principios sólidos y se comporte de manera congruente con ellos. ",
+        "Me gustaría estar con alguien que tenga interés por aprender y descubrir cosas nuevas. ",
     ],
 
     reasonToChooseHer: [

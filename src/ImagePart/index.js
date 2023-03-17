@@ -43,12 +43,23 @@ function ImagePart(props) {
             />
             <figcaption className="ImagePart__figure__figcaption">
                 {props.name}
+
+                {/* Add a modal to view each person's presentation */}
                 {presentationIsVisible && (
-                    <div>
-                        <br />
-                        {finalPresentation}
-                        <br />
-                        <br />
+                    <div className="modal">
+                        <div className="modal__content">
+                            <img src={props.src} alt={props.alt}></img>
+                            <p className="name">{props.name}</p>
+                            <p className="presentation">{finalPresentation}</p>
+                            <div className="modal__buttons">
+                                <button
+                                    onClick={() =>
+                                        setPresentationIsVisible(false)
+                                    }>
+                                    Volver
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 )}
             </figcaption>

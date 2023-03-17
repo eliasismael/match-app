@@ -18,6 +18,122 @@
 
 .ImagePart__figure__figcaption {
     font-size: 1.6rem;
-    /* font-weight: ; */
     margin-top: 5px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal__content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 70%;
+    max-height: 80%;
+}
+
+.modal__content img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 70%;
+}
+
+.presentation {
+    margin-top: 0.5rem;
+    font-size: 50%;
+}
+
+.modal__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.modal__buttons button {
+    background-image: linear-gradient(45deg, #ff3b3f, #e60073);
+    color: #fff;
+    width: 3rem;
+    height: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.6rem;
+}
+
+.modal__buttons button:hover {
+    transform: scale(1.1);
+}
+
+@media (min-width: 250px) {
+    .modal__content {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 70%;
+        height: auto;
+    }
+
+    .modal__content img {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .presentation {
+        margin-top: 1rem;
+        font-size: 50%;
+    }
+
+    .modal__buttons button {
+        width: 3rem;
+        height: 1.5rem;
+        font-size: small;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal__content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 70%;
+        height: auto;
+    }
+
+    .modal__content img {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .name {
+        font-size: 100%;
+    }
+    .presentation {
+        margin-top: 1rem;
+        font-size: 85%;
+    }
+
+    .modal__buttons button {
+        margin-top: 0.5rem;
+        width: 6rem;
+        height: 2rem;
+        font-size: large;
+    }
 }
