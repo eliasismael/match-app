@@ -1,4 +1,5 @@
 import React from "react";
+import Results from "../Results";
 import "./index.css";
 
 function FindCoupleButton(props) {
@@ -32,19 +33,39 @@ function FindCoupleButton(props) {
 
         setTimeout(() => {
             // Show which person each chose
-            let matchesString = "";
-            for (let i = 0; i < choosers.length; i++) {
-                matchesString += `💘 ${choosers[i]} eligió a ${chosens[i]} `;
+
+            function addElections() {
+                let matchesString = [];
+                for (let i = 0; i < choosers.length; i++) {
+                    matchesString.push(
+                        `💘 ${choosers[i]} eligió a ${chosens[i]}`
+                    );
+                }
+
+                return (
+                    <div>
+                        <ul style={{ listStyleType: "none" }}>
+                            {matchesString.map((e) => {
+                                return (
+                                    <li key={`${matchesString.indexOf(e)}`}>
+                                        {e}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                );
             }
 
-            props.setMatchesText(matchesString);
+            props.setMatchesText(addElections());
 
             // Clear previous message and show results or "no matches"
-            props.setResultText("");
+            // props.setResultText("");
 
-            let resultString = "";
-            props.men.map((man) => {
-                /* If "Marcos" is the key for "Ana"...
+            function addMatches() {
+                let resultString = [];
+                props.men.map((man) => {
+                    /* If "Marcos" is the key for "Ana"...
                             person.name = "Marcos"
                             - props.coupleSelected[person.name] === "Ana"
 
@@ -54,26 +75,48 @@ function FindCoupleButton(props) {
                         Notice that do that would be the same thing as doing this:
                             - props.coupleSelected[ "Ana" ] === "Marcos" */
 
-                if (
-                    man.name ===
-                    props.coupleSelected[props.coupleSelected[man.name]]
-                ) {
-                    couples = true;
-                    resultString += `💞 Hay match entre ${man.name} y ${
-                        props.coupleSelected[man.name]
-                    } 💞`;
-                }
-            });
+                    if (
+                        man.name ===
+                        props.coupleSelected[props.coupleSelected[man.name]]
+                    ) {
+                        couples = true;
+                        resultString.push(
+                            `💞 Hay match entre ${man.name} y ${
+                                props.coupleSelected[man.name]
+                            } 💞`
+                        );
+                    }
+                });
 
-            props.setResultText(resultString);
+                window.scrollBy(0, 1000);
 
-            // If there were not matches
-            if (!couples) {
-                props.setResultText("No hay matches 💔");
+                return (
+                    <div>
+                        {couples && (
+                            <ul style={{ listStyleType: "none" }}>
+                                {resultString.map((e) => {
+                                    return (
+                                        <li key={`${resultString.indexOf(e)}`}>
+                                            {e}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        )}
+
+                        {!couples && (
+                            <ul style={{ listStyleType: "none" }}>
+                                <li>No hay matches 💔</li>
+                            </ul>
+                        )}
+                    </div>
+                );
             }
 
-            window.scrollBy(0, 1000);
+            props.setResultText(addMatches());
         }, 3000);
+
+        window.scrollBy(0, 1000);
 
         // Show that the button has already been pressed
         setButtonClicked(true);

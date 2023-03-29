@@ -3,8 +3,8 @@ import "./index.css";
 function Results(props) {
     return (
         <section className="Results">
-            <p className="Results-matches">{props.matchesText}</p>
-            <p className="Result-msg">{props.resultText}</p>
+            <div className="Results-matches">{props.matchesText}</div>
+            <div className="Result-msg">{props.resultText}</div>
         </section>
     );
 }

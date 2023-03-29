@@ -6,7 +6,6 @@ import FindCoupleButton from "./FindCoupleButton";
 import Results from "./Results";
 
 import { men, women } from "./utils/persons";
-
 import { textsForMen, textsForWomen } from "./utils/presentations";
 
 function App() {
