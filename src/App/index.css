@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: "MoonDance-Regular";
-    src: url("../public/fonts/MoonDance-Regular.ttf") format("truetype");
+    src: url("../../public/fonts/MoonDance-Regular.ttf") format("truetype");
 }
 
 header {

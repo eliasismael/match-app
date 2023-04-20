@@ -1,6 +1,8 @@
 .ImagesSection {
+    /* border: 2px solid red; */
+    max-width: 85%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }

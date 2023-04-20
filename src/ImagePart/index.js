@@ -1,28 +1,22 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 
-function ImagePart(props) {
-    const [finalPresentation, setFinalPresentation] = React.useState("");
-    const [presentationCreated, setPresentationCreated] = React.useState(false);
-    const [presentationIsVisible, setPresentationIsVisible] =
-        React.useState(false);
+function ImagePart({
+    name,
+    src,
+    alt,
+    presentation,
+    textsForMen,
+    textsForWomen,
+}) {
+    const [finalPresentation, setFinalPresentation] = useState("");
+    const [presentationIsVisible, setPresentationIsVisible] = useState(false);
 
-    const showPresentation = () => {
-        if (presentationCreated) {
-            if (presentationIsVisible) {
-                setPresentationIsVisible(false);
-            } else {
-                setPresentationIsVisible(true);
-            }
-            return;
-        }
-
-        const texts = props.textsForMen
-            ? props.textsForMen
-            : props.textsForWomen;
+    const createPresentation = () => {
+        // Determinete if we must create a presentation for a men or women
+        const texts = textsForMen ? textsForMen : textsForWomen;
 
         let presentation = "";
-
         for (const key in texts) {
             const array = texts[key];
             const randomIndex = Math.floor(Math.random() * array.length);
@@ -30,27 +24,34 @@ function ImagePart(props) {
         }
 
         setFinalPresentation(presentation);
-        setPresentationCreated(true);
     };
+
+    // This is for avoid creating a new presentation each time the presentation become visible
+    useEffect(() => {
+        createPresentation();
+    }, []);
 
     return (
         <figure className="ImagePart__figure">
             <img
                 className="ImagePart__figure__img"
-                src={props.src}
-                alt={`Imágen de ${props.name}`}
-                onClick={showPresentation}
+                src={src}
+                alt={`Imágen de ${name}`}
+                onClick={() => setPresentationIsVisible(true)}
             />
             <figcaption className="ImagePart__figure__figcaption">
-                {props.name}
+                {name}
 
-                {/* Add a modal to view each person's presentation */}
+                {/* Add a modal to view each person's presentation  */}
                 {presentationIsVisible && (
                     <div className="modal">
                         <div className="modal__content">
-                            <img src={props.src} alt={props.alt}></img>
-                            <p className="name">{props.name}</p>
-                            <p className="presentation">{finalPresentation}</p>
+                            <img src={src} alt={alt}></img>
+                            <p className="name">{name}</p>
+                            <p className="presentation">
+                                {presentation || finalPresentation}
+                            </p>
+
                             <div className="modal__buttons">
                                 <button
                                     onClick={() =>
@@ -67,4 +68,4 @@ function ImagePart(props) {
     );
 }
 
-export default ImagePart;
+export { ImagePart };

@@ -1,31 +1,44 @@
-import React from "react";
+import { useState } from "react";
+import { useMyContext } from "../Context";
 import "./index.css";
 
-function ButtonChooseCouple(props) {
-    const [buttonClicked, setButtonClicked] = React.useState(false);
+function ButtonChooseCouple({ choosers, chosens }) {
+    const {
+        men,
+        women,
+        menHaveChosen,
+        setMenHaveChosen,
+        womenHaveChosen,
+        setWomenHaveChosen,
+        setResultText,
+        setCoupleSelected,
+    } = useMyContext();
+
+    const [buttonClicked, setButtonClicked] = useState(false);
 
     const chooseCouple = () => {
-        if (props.menHaveChosen && props.womenHaveChosen)
-            return props.setResultText("Ya se eligieron parejas");
-        if (props.choosers === props.men && props.menHaveChosen)
-            return props.setResultText("Los hombres ya eligieron pareja");
-        if (props.choosers !== props.men && props.womenHaveChosen)
-            return props.setResultText("Las mujeres ya eligieron pareja");
+        if (menHaveChosen && womenHaveChosen)
+            return setResultText("Ya se eligieron parejas");
+        if (choosers === men && menHaveChosen)
+            return setResultText("Los hombres ya eligieron pareja");
+        if (choosers !== men && womenHaveChosen)
+            return setResultText("Las mujeres ya eligieron pareja");
 
-        props.choosers.forEach((choser) => {
-            const randomChosenIndex = Math.floor(
-                Math.random() * props.chosens.length
-            );
+        choosers.forEach((choser) => {
+            const randomChosen =
+                chosens[Math.floor(Math.random() * chosens.length)];
 
-            props.setCoupleSelected((prevState) => ({
+            setCoupleSelected((prevState) => ({
                 ...prevState,
-                [choser.name]: props.chosens[randomChosenIndex].name,
+                [choser.name]: randomChosen.name,
             }));
         });
 
-        props.choosers === props.men
-            ? props.setMenHaveChosen(true)
-            : props.setWomenHaveChosen(true);
+        if (choosers === men) {
+            setMenHaveChosen(true);
+        } else if (choosers === women) {
+            setWomenHaveChosen(true);
+        }
 
         setButtonClicked(true);
     };
@@ -42,4 +55,4 @@ function ButtonChooseCouple(props) {
         </div>
     );
 }
-export default ButtonChooseCouple;
+export { ButtonChooseCouple };

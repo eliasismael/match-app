@@ -41,6 +41,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 70%;
     max-height: 80%;
+    font-size: 30px;
+    text-shadow: -4px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
 .modal__content img {
@@ -51,12 +53,11 @@
 }
 
 .name {
-    font-size: 70%;
+    font-size: 20px;
 }
 
 .presentation {
-    margin-top: 0.5rem;
-    font-size: 50%;
+    font-size: 40px;
 }
 
 .modal__buttons {

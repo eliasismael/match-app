@@ -1,59 +1,87 @@
-import hombre1 from "../img/men/hombre1.jfif";
-import hombre2 from "../img/men/hombre2.jfif";
-import hombre3 from "../img/men/hombre3.jfif";
-import hombre4 from "../img/men/hombre4.jfif";
-import hombre5 from "../img/men/hombre5.jfif";
+import man1 from "../img/men/hombre1.jfif";
+import man2 from "../img/men/hombre2.jfif";
+import man3 from "../img/men/hombre3.jfif";
+import man4 from "../img/men/hombre4.jfif";
+import man5 from "../img/men/hombre5.jfif";
 
-import mujer1 from "../img/women/mujer1.jfif";
-import mujer2 from "../img/women/mujer2.jfif";
-import mujer3 from "../img/women/mujer3.jfif";
-import mujer4 from "../img/women/mujer4.jfif";
-import mujer5 from "../img/women/mujer5.jfif";
+import woman1 from "../img/women/mujer1.jfif";
+import woman2 from "../img/women/mujer2.jfif";
+import woman3 from "../img/women/mujer3.jfif";
+import woman4 from "../img/women/mujer4.jfif";
+import woman5 from "../img/women/mujer5.jfif";
+
+// const fs = require("fs");
+// const ruta = "../img/men/";
+// const imagenes = fs.readdirSync(ruta);
+// console.log(imagenes);
+// const men = [];
+
+// const manNames = ["Tomás", "pepe", "papa", "pipi", "popo"];
+
+// for (let i = 0; i < 5; i++) {
+//     // const nombreImagen = imagenes[i].split(".")[0];
+//     men.push({ name: manNames[i], src: ruta + imagenes[i] }); //[nombreImagen] = ruta + imagenes[i];
+// }
+
+// import { imgsMen } from "../img/men/imgsMen";
 
 const men = [
     {
         name: "Tomás",
-        src: hombre1,
+        src: man1,
+        presentation: null,
     },
     {
         name: "Nicolás",
-        src: hombre2,
+        src: man2,
+        presentation: null,
     },
     {
         name: "Juan",
-        src: hombre3,
+        src: man3,
+        presentation: null,
     },
     {
         name: "Lucas",
-        src: hombre4,
+        src: man4,
+        presentation: null,
     },
     {
         name: "Marcos",
-        src: hombre5,
+        src: man5,
+        presentation: null,
     },
 ];
 
 const women = [
     {
         name: "Valentina",
-        src: mujer1,
+        src: woman1,
+        presentation: null,
     },
     {
         name: "Florencia",
-        src: mujer2,
+        src: woman2,
+        presentation: null,
     },
     {
         name: "María",
-        src: mujer3,
+        src: woman3,
+        presentation: null,
     },
     {
         name: "Sofía",
-        src: mujer4,
+        src: woman4,
+        presentation: null,
     },
     {
         name: "Agustina",
-        src: mujer5,
+        src: woman5,
+        presentation: null,
     },
 ];
+
+// const [men, setMen] = useState(menData);
+// const [women, setWomen] = useState(womenData);
 
 export { men, women };
