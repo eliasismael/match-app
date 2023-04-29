@@ -25,7 +25,7 @@ import woman5 from "../img/women/mujer5.jfif";
 
 // import { imgsMen } from "../img/men/imgsMen";
 
-const men = [
+const menData = [
     {
         name: "Tomás",
         src: man1,
@@ -53,7 +53,7 @@ const men = [
     },
 ];
 
-const women = [
+const womenData = [
     {
         name: "Valentina",
         src: woman1,
@@ -81,7 +81,4 @@ const women = [
     },
 ];
 
-// const [men, setMen] = useState(menData);
-// const [women, setWomen] = useState(womenData);
-
-export { men, women };
+export { menData, womenData };

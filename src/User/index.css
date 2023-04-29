@@ -1,24 +1,26 @@
-.ImagePart__figure {
+.User {
     text-align: center;
     margin: 10px;
+    position: relative;
 }
 
-.ImagePart__figure__img {
+.User__img {
     width: 12rem;
     height: 12rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.ImagePart__figure__img:hover {
+.User__img:hover {
     box-shadow: 0 0 10px #ff3b3f;
     transform: scale(1.1);
     cursor: pointer;
 }
 
-.ImagePart__figure__figcaption {
+.User__h3 {
     font-size: 1.6rem;
     margin-top: 5px;
+    font-weight: normal;
 }
 
 .modal {
@@ -41,7 +43,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 70%;
     max-height: 80%;
-    font-size: 30px;
+    font-size: 2rem;
     text-shadow: -4px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -61,6 +63,7 @@
 }
 
 .modal__buttons {
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
@@ -69,7 +72,7 @@
 .modal__buttons button {
     background-image: linear-gradient(45deg, #ff3b3f, #e60073);
     color: #fff;
-    width: 3rem;
+    width: 2rem;
     height: 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -126,6 +129,7 @@
     .name {
         font-size: 100%;
     }
+
     .presentation {
         margin-top: 1rem;
         font-size: 85%;
@@ -137,4 +141,26 @@
         height: 2rem;
         font-size: large;
     }
+}
+
+#delete {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    background-image: none;
+    background-color: #fff;
+    color: #ff3b3f;
+    width: 10%;
+    height: 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    text-shadow: 0 0 10px #ff3b3f;
+}
+
+#delete:hover {
+    transform: none;
+    color: #fff;
+    background-color: #ff3b3f;
+    box-shadow: 0 0 10px #ff3b3f;
 }

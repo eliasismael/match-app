@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMyContext } from "../Context";
 
 import "./index.css";
@@ -9,6 +9,7 @@ function FindCoupleButton() {
         men,
         menHaveChosen,
         womenHaveChosen,
+        resultText,
         setResultText,
         setMatchesText,
         coupleSelected,
@@ -17,33 +18,33 @@ function FindCoupleButton() {
     } = useMyContext();
 
     const searchForCouples = () => {
-        // Check if matches have already been searched
+        // RETURN CONDITIONS
         if (matchesSearched) return setResultText("Ya se buscaron matches");
 
-        // Check if men and women have chosen their couple
-        if (!menHaveChosen && !womenHaveChosen)
+        if (!menHaveChosen && !womenHaveChosen) {
+            window.scrollBy(0, 1000);
             return setResultText("No se eligieron parejas");
-        if (!menHaveChosen)
-            return setResultText("Los hombres no eligieron pareja");
-        if (!womenHaveChosen)
-            return setResultText("Las mujeres no eligieron pareja");
+        }
 
-        // Clear previous text and scroll to the results
-        setMatchesText("");
-        window.scrollBy(0, 1000);
+        if (!menHaveChosen) {
+            window.scrollBy(0, 1000);
+            return setResultText("Los hombres no eligieron pareja");
+        }
+
+        if (!womenHaveChosen) {
+            window.scrollBy(0, 1000);
+            return setResultText("Las mujeres no eligieron pareja");
+        }
 
         // Show message while searching for matches
         setResultText("Buscando matches...");
 
         let choosers = Object.keys(coupleSelected);
         let chosens = Object.values(coupleSelected);
-
-        // Variable to know if there are matcehs
-        let couples = false;
+        let thereAreCouples = false;
 
         setTimeout(() => {
             // Show which person each chose
-
             const addElections = () => {
                 let matchesString = [];
                 for (let i = 0; i < choosers.length; i++) {
@@ -70,9 +71,6 @@ function FindCoupleButton() {
             const electionsResults = addElections();
             setMatchesText(electionsResults);
 
-            // Clear previous message and show results or "no matches"
-            // .setResultText("");
-
             const addMatches = () => {
                 let resultString = [];
                 men.forEach((man) => {
@@ -87,7 +85,7 @@ function FindCoupleButton() {
                             - .coupleSelected[ "Ana" ] === "Marcos" */
 
                     if (man.name === coupleSelected[coupleSelected[man.name]]) {
-                        couples = true;
+                        thereAreCouples = true;
                         resultString.push(
                             `💞 Hay match entre ${man.name} y ${
                                 coupleSelected[man.name]
@@ -96,11 +94,9 @@ function FindCoupleButton() {
                     }
                 });
 
-                window.scrollBy(0, 1000);
-
                 return (
                     <div>
-                        {couples && (
+                        {thereAreCouples && (
                             <ul style={{ listStyleType: "none" }}>
                                 {resultString.map((e) => {
                                     return (
@@ -112,7 +108,7 @@ function FindCoupleButton() {
                             </ul>
                         )}
 
-                        {!couples && (
+                        {!thereAreCouples && (
                             <ul style={{ listStyleType: "none" }}>
                                 <li>No hay matches 💔</li>
                             </ul>
@@ -128,9 +124,13 @@ function FindCoupleButton() {
         // Show that the button has already been pressed
         setButtonClicked(true);
         setMatchesSearched(true);
-
-        window.scrollBy(0, 1000);
+        window.scrollBy(0, 10000);
     };
+
+    // GO SOWN WHEN THE RESULTS ARE READY
+    useEffect(() => {
+        window.scrollBy(0, 10000);
+    }, [resultText]);
 
     return (
         <button

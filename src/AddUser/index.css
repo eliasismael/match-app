@@ -1,24 +1,28 @@
-.AddUser {
+.AddUser__button {
     position: fixed;
     top: 80%;
-    left: 92%;
-    width: 90px;
-    height: 90px;
+    /* left: 92%; */
+    right: 1%;
+    width: 5.5rem;
+    height: 5.5rem;
     border-radius: 50%;
     background: linear-gradient(45deg, #ff3b3f, #e60073);
     color: white;
     border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 100px;
+    font-size: 90px;
     box-shadow: 0 0 10px #e60073;
 }
 
-.AddUser:hover {
-    box-shadow: 0 0 15px #e60073;
+.AddUser__button span {
+    position: relative;
+    bottom: 22%;
+    left: 0%;
+}
+
+.AddUser__button:hover {
+    box-shadow: 0 0 25px #e6007380;
     cursor: pointer;
-    transform: rotate(180deg) scale(1.15);
+    transform: scale(1.2);
 }
 
 .Add-user__modal {
@@ -42,7 +46,7 @@
     max-height: 80%;
 }
 
-.form-add-user {
+.Add-user__modal__content__form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,38 +54,45 @@
     padding: 20px;
 }
 
-.form-add-user select,
-input,
+.Add-user__modal__content__form input[type="text"],
 textarea {
-    font-size: 14px;
+    font-size: 22px;
     box-shadow: -2px 2px 5px rgb(0, 0, 0, 0.5);
     border: none;
     border-radius: 2px;
     outline: none;
 }
 
-.form-add-user input[type="file"] {
-    font-size: 12px;
+.Add-user__modal__content__form select {
+    width: 150px;
+    font-size: 22px;
+    letter-spacing: 0px;
+    text-align: center;
 }
 
-.form-add-user input:hover,
+.Add-user__modal__content__form input[type="file"] {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.Add-user__modal__content__form input:hover,
 select:hover,
 textarea:hover {
     box-shadow: -2px 2px 5px #ff3b3f80;
 }
 
-.form-add-user label {
+.Add-user__modal__content__form label {
     text-shadow: -2px 2px 5px rgb(0, 0, 0, 0.5);
 }
 
-.form-add-use textarea {
+.Add-user__modal__content__form textarea {
     width: 100%;
     height: 100px;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-.Add-user__modal__buttons {
+.Add-user__modal__content__buttons {
     height: 100px;
     width: 100%;
     display: flex;
@@ -90,7 +101,7 @@ textarea:hover {
     align-items: center;
 }
 
-.Add-user__modal__buttons button {
+.Add-user__modal__content__buttons button {
     background-image: linear-gradient(45deg, #ff3b3f, #e60073);
     color: #fff;
     border-radius: 5px;
@@ -101,6 +112,6 @@ textarea:hover {
     font-size: 18px;
 }
 
-.Add-user__modal__buttons button:hover {
+.Add-user__modal__content__buttons button:hover {
     transform: scale(1.1);
 }

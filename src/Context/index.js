@@ -1,26 +1,29 @@
 import React, { useContext, useState } from "react";
-
-import { men, women } from "../utils/persons";
+import { useLocalStorage } from "../utils/useLocalStorage";
+import { menData, womenData } from "../utils/persons";
 import { textsForMen, textsForWomen } from "../utils/presentations";
-
 const Context = React.createContext();
 
 function ContextProvider(props) {
     const [menHaveChosen, setMenHaveChosen] = useState(false);
     const [womenHaveChosen, setWomenHaveChosen] = useState(false);
+
     const [resultText, setResultText] = useState("");
     const [matchesText, setMatchesText] = useState("");
+
     const [coupleSelected, setCoupleSelected] = useState({});
     const [matchesSearched, setMatchesSearched] = useState(false);
-    const [personsAdded, setPersonsAdded] = useState(0);
+
+    const [men, setMen] = useState(menData);
+    const [women, setWomen] = useState(womenData);
 
     return (
         <Context.Provider
             value={{
                 men,
                 women,
-                personsAdded,
-                setPersonsAdded,
+                setMen,
+                setWomen,
                 textsForMen,
                 textsForWomen,
                 menHaveChosen,

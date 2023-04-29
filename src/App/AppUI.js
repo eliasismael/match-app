@@ -1,6 +1,6 @@
 import React from "react";
-import { ImagesSection } from "../ImagesSection";
-import { ImagePart } from "../ImagePart";
+import { UsersSection } from "../UsersSection";
+import { User } from "../User";
 import { ButtonChooseCouple } from "../ButtonChooseCouple";
 import { FindCoupleButton } from "../FindCoupleButton";
 import { AddUser } from "../AddUser";
@@ -17,29 +17,34 @@ function AppUI() {
             </header>
 
             <main>
-                <ImagesSection>
+                <UsersSection>
                     {men.map((man) => (
-                        <ImagePart
+                        <User
                             key={men.indexOf(man)}
+                            index={men.indexOf(man)}
                             name={man.name}
                             src={man.src}
                             presentation={man.presentation}
                             textsForMen={textsForMen}
                         />
                     ))}
-                </ImagesSection>
+                </UsersSection>
+
                 <ButtonChooseCouple choosers={men} chosens={women} />
-                <ImagesSection>
+
+                <UsersSection>
                     {women.map((woman) => (
-                        <ImagePart
+                        <User
                             key={women.indexOf(woman)}
+                            index={women.indexOf(woman)}
                             name={woman.name}
                             src={woman.src}
                             presentation={woman.presentation}
                             textsForWomen={textsForWomen}
                         />
                     ))}
-                </ImagesSection>
+                </UsersSection>
+
                 <ButtonChooseCouple choosers={women} chosens={men} />
 
                 <FindCoupleButton />

@@ -1,9 +1,17 @@
 import { useMyContext } from "../Context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
+import { useLocalStorage } from "../utils/useLocalStorage";
 
 function AddUser() {
-    const { men, women, setPersonsAdded } = useMyContext();
+    const {
+        men,
+        women,
+        setMen,
+        setWomen,
+        // setPersonsAdded
+    } = useMyContext();
+
     const [addingUser, setAddingUser] = useState(false);
 
     const onClickHandle = () => {
@@ -11,49 +19,84 @@ function AddUser() {
     };
 
     const addPerson = () => {
+        // RETURN CONDITIONS
+        if (!document.getElementById("user-img").files[0]) {
+            return alert("Añade una imágen");
+        }
+        if (!document.getElementById("name").value) {
+            return alert("Añade un nombre");
+        }
+        if (
+            Array.from(document.getElementById("name").value).every(
+                (char) => char === " "
+            )
+        ) {
+            return alert("Añade un nombre válido");
+        }
+        if (
+            men.some(
+                (element) =>
+                    element.name.toLowerCase() ===
+                    String(
+                        document
+                            .getElementById("name")
+                            .value.toLowerCase()
+                            .split(" ")
+                            .join("")
+                    )
+            ) ||
+            women.some(
+                (element) =>
+                    element.name.toLowerCase() ===
+                    String(
+                        document
+                            .getElementById("name")
+                            .value.toLowerCase()
+                            .split(" ")
+                            .join("")
+                    )
+            )
+        ) {
+            return alert("Esa persona ya fue añadida");
+        }
+
+        // FUNCTION LOGIC
         const name = document.getElementById("name");
         const img = document.getElementById("user-img");
         const gender = document.getElementById("gender");
         const presentation = document.getElementById("presentation");
 
-        // If there is no image or name the person isn't added
-        if (
-            !name.value ||
-            Array.from(name.value).every((char) => char === " ") ||
-            !img.files[0]
-        ) {
-            return;
-        }
-
+        // PROCESS THE DATA
         const file = img.files[0];
         const reader = new FileReader();
         reader.readAsDataURL(file);
-
         reader.addEventListener("load", () => {
-            // Add the properties for the corresponind gender
-            const arrGender = gender.value === "Maculino" ? men : women;
-
-            arrGender.push({
+            const newUser = {
                 name: name.value,
                 src: reader.result,
                 presentation: presentation.value,
-            });
+            };
 
-            // Change state each time a person is added to re-render the component
-            setPersonsAdded((curentValue) => curentValue + 1);
+            if (gender.value === "Masculino") {
+                setMen((currentValue) => [...currentValue, newUser]);
+            } else if (gender.value === "Femenino") {
+                setWomen((currentValue) => [...currentValue, newUser]);
+            }
         });
     };
 
+    useEffect(() => {}, [men, women]);
+
     return (
         <div>
-            <button className="AddUser" onClick={onClickHandle}>
-                +
+            <button className="AddUser__button" onClick={onClickHandle}>
+                <span>+</span>
             </button>
 
             {addingUser && (
                 <div className="Add-user__modal">
                     <div className="Add-user__modal__content">
-                        <form className="form-add-user">
+                        <form className="Add-user__modal__content__form">
                             <label htmlFor="name">Nombre:</label>
                             <input
                                 type="text"
@@ -71,7 +114,7 @@ function AddUser() {
                             <label htmlFor="gender">Género:</label>
 
                             <select id="gender">
-                                <option value={"Maculino"}>Maculino</option>
+                                <option value={"Masculino"}>Masculino</option>
                                 <option value={"Femenino"}>Femenino</option>
                             </select>
 
@@ -81,7 +124,7 @@ function AddUser() {
                                 className="presentation"
                                 placeholder="Añade una presnetación"></textarea>
 
-                            <div className="Add-user__modal__buttons">
+                            <div className="Add-user__modal__content__buttons">
                                 <button
                                     id="btn__add-person"
                                     className="btn__add-person"
@@ -89,6 +132,7 @@ function AddUser() {
                                     onClick={(evt) => {
                                         evt.preventDefault();
                                         addPerson();
+                                        // setAddingUser(false);
                                     }}>
                                     Añadir persona
                                 </button>

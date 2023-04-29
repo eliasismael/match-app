@@ -55,4 +55,5 @@ function ButtonChooseCouple({ choosers, chosens }) {
         </div>
     );
 }
+
 export { ButtonChooseCouple };

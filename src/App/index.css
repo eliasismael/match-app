@@ -4,7 +4,6 @@
     transition: all 0.3s ease;
     font-family: "MoonDance-Regular", sans-serif;
     box-sizing: border-box;
-    user-select: none;
 }
 
 @font-face {
@@ -35,7 +34,6 @@ section {
     margin-top: 40px;
 }
 
-/* Estilos para el pie de página */
 footer {
     background: linear-gradient(45deg, #ff3b3f, #e60073);
     color: #ffffff;

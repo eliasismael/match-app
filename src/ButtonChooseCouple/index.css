@@ -7,6 +7,7 @@
     background: linear-gradient(45deg, #ff3b3f, #e60073);
     color: #ffffff;
     font-size: 1.2rem;
+    height: 50px;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -18,7 +19,7 @@
 }
 
 .buttonCliked {
-    border: 0.2rem solid yellow;
+    border: 2px solid yellow;
     font-size: 1rem;
     pointer-events: none;
 }
